@@ -1,7 +1,7 @@
 $(function () {
 
     $('.Main__content').fullpage({
-        anchors: ['main', 'sub01', 'sub02', 'sub03', 'sub04'],
+        anchors: ['main', 'sub01', 'sub02', 'sub03', 'sub04', 'sub05'],
         navigation: false,
         css3: false,
         //반응형에서 fullpage 안하기.
@@ -22,6 +22,8 @@ $(function () {
         onLeave: function (idx, nidx, dir) {
             $('.side_gnb li').eq(nidx - 1).addClass('on').siblings().removeClass('on');
             console.log(idx, nidx, dir);
+
+            $('.gnb li').eq(nidx - 1).addClass('on').siblings().removeClass('on');
 
             if (dir == 'down') {
                 $('.header').addClass('on')
