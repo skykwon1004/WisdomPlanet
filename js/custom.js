@@ -65,12 +65,43 @@ $(function () {
         $('.header').toggleClass('on');
     });
 
-
     $('.cover li').on('click', function () {
         $('.cover').removeClass('on');
         $('.mopen').removeClass('on');
         $('.header').removeClass('on');
 
+    });
+
+    // brands_slide
+    $('.brands_slide').on('init afterChange', function (e, s, c) {
+        // c = 0,1
+        var current = $('.brands_slide .slick-current');
+        current.addClass('on').siblings().removeClass('on');
+        // $('.main_visual .main_slide_num span').text(c ? (c + 1) : 1);
+        // $('.main_visual .main_slide_num strong').text(s.slideCount);
+    });
+
+
+    $('.brands_slide').slick({
+        arrows: false,
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    });
+
+
+    $('.sub02 .left').on('click', function () {
+        $('.brands_slide').slick('slickPrev')
+    });
+
+    $('.sub02 .right').on('click', function () {
+        $('.brands_slide').slick('slickNext')
     });
 
 })
