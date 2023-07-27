@@ -30,7 +30,12 @@ $(function () {
             } else {
                 $('.header').removeClass('on')
             }
-        }
+        },
+
+        afterLoad: function (anchorLink, index) {
+            //console.log(index);
+            index == 1 ? $('.toTop').fadeOut() : $('.toTop').fadeIn();
+        },
     });
 
 
@@ -47,7 +52,7 @@ $(function () {
         arrows: false,
         fade: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
     });
 
     $('.main .left').on('click', function () {
@@ -104,4 +109,28 @@ $(function () {
         $('.brands_slide').slick('slickNext')
     });
 
-})
+
+
+
+    //countup
+    //https://github.com/bfintal/Counter-Up
+    //기본세팅 $(".countup").counterUp();
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
+    $('.num').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+
+
+});
