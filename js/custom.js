@@ -58,4 +58,19 @@ $(function () {
         $('.main_slide').slick('slickNext')
     });
 
+    // m cover
+    $('.mopen').on('click', function () {
+        $(this).toggleClass('on');
+        $('.cover').toggleClass('on');
+        $('.header').toggleClass('on');
+    });
+
+
+    $('.cover li').on('click', function () {
+        $('.cover').removeClass('on');
+        $('.mopen').removeClass('on');
+        $('.header').removeClass('on');
+
+    });
+
 })

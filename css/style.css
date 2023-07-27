@@ -21,6 +21,10 @@
     color: var(--mc);
 }
 
+.content_title p {
+    margin: 0 0 30px 0;
+    font-size: 20px;
+}
 
 
 
@@ -47,18 +51,25 @@
 
 .header .header_wrap {
     display: flex;
-    max-width: 1780px;
-    padding: 0 20px;
+    padding: 0 100px;
     margin: 0 auto;
     align-items: center;
-    justify-content: space-between;
+    /* outline: 1px solid red; */
+}
+
+.header .header_wrap .gnb {
+    /* outline: 1px solid green; */
+    margin: 0 auto;
 }
 
 .header .header_wrap .gnb ul {
     display: flex;
-    gap: 70px;
     font-size: 24px;
     font-weight: 700;
+}
+
+.header .header_wrap .gnb ul li {
+    margin: 0 70px 0 0;
 }
 
 .header .header_wrap .gnb ul li:hover {
@@ -88,7 +99,7 @@
     top: 50%;
     right: 50px;
     transform: translate(0, -50%);
-    z-index: 999;
+    z-index: 99;
     /* outline: 1px solid red */
 }
 
@@ -128,6 +139,104 @@
     background: var(--mc);
 }
 
+
+/* m cover */
+.mopen {
+    /* outline: 1px solid yellow; */
+    position: fixed;
+    inset: 40px 150px auto auto;
+    z-index: 9999;
+
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.mopen button {
+    font-size: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.mopen::before,
+.mopen::after {
+    content: "";
+    position: absolute;
+    inset: 5px 5px auto 5px;
+    background: #fff;
+    height: 1px;
+}
+
+.mopen::before {
+    inset: 5px 5px auto 5px;
+}
+
+.mopen::after {
+    inset: auto 5px 5px 5px;
+}
+
+.mopen button::before,
+.mopen button::after {
+    content: "";
+    position: absolute;
+    inset: 48.5% 10px auto 10px;
+    transform: translate(0, 0);
+    background: #fff;
+    height: 1px;
+    transition: 0.5s;
+}
+
+.mopen.on::before,
+.mopen.on::after {
+    opacity: 0;
+
+}
+
+.mopen.on button::before {
+    transition: 0.5s;
+    inset: 48.5% 5px auto 5px;
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.mopen.on button::after {
+    transition: 0.5s 0.5s;
+    inset: 48.5% 5px auto 5px;
+    transform: translate(0, -50%) rotate(-45deg);
+}
+
+.cover {
+    position: fixed;
+    top: 0;
+    right: -500px;
+
+    width: 500px;
+    height: 100vh;
+
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 80px;
+    color: #333;
+
+    /* display: none; */
+
+    overflow: hidden;
+    transition: 1s;
+}
+
+.cover.on {
+    right: 0;
+    z-index: 999;
+}
+
+.cover ul {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 50px;
+    background: #000;
+    color: #999;
+}
 
 /*main*/
 .main {
@@ -202,7 +311,7 @@
 }
 
 .slide_handler {
-    width: 1780px;
+    width: 1200px;
     position: absolute;
     inset: 50% auto auto 50%;
     transform: translate(-50%, -50%);
