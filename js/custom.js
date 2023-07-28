@@ -115,22 +115,53 @@ $(function () {
     //countup
     //https://github.com/bfintal/Counter-Up
     //기본세팅 $(".countup").counterUp();
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1000
+    // $('.counter').counterUp({
+    //     delay: 10,
+    //     time: 1000
+    // });
+
+    // $('.num').each(function () {
+    //     $(this).prop('Counter', 0).animate({
+    //         Counter: $(this).text()
+    //     }, {
+    //         duration: 3000,
+    //         easing: 'swing',
+    //         step: function (now) {
+    //             $(this).text(Math.ceil(now));
+    //         }
+    //     });
+    // });
+
+    // jQuery 코드
+    $(window).on('scroll', function () {
+        var section = $('.sub04'); // sub04 섹션 선택
+
+        if (isElementInViewport(section)) {
+            // 스크롤이 sub04 섹션에 도달했을 때 카운트 애니메이션 실행
+            $('.num').each(function () {
+                var target = $(this);
+                if (!target.hasClass('counted')) {
+                    $({ Counter: 0 }).animate({ Counter: target.text() }, {
+                        duration: 3000,
+                        easing: 'swing',
+                        step: function () {
+                            target.text(Math.ceil(this.Counter));
+                        }
+                    });
+                    target.addClass('counted');
+                }
+            });
+        }
     });
 
-    $('.num').each(function () {
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 3000,
-            easing: 'swing',
-            step: function (now) {
-                $(this).text(Math.ceil(now));
-            }
-        });
-    });
-
+    function isElementInViewport(element) {
+        var rect = element[0].getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 
 });
