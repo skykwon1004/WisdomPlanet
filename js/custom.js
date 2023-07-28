@@ -89,7 +89,7 @@ $(function () {
 
     $('.brands_slide').slick({
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         responsive: [
             {
                 breakpoint: 768,
