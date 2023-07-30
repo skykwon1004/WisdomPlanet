@@ -111,57 +111,47 @@ $(function () {
 
 
 
-
-    //countup
-    //https://github.com/bfintal/Counter-Up
-    //기본세팅 $(".countup").counterUp();
-    // $('.counter').counterUp({
-    //     delay: 10,
-    //     time: 1000
-    // });
-
-    // $('.num').each(function () {
-    //     $(this).prop('Counter', 0).animate({
-    //         Counter: $(this).text()
-    //     }, {
-    //         duration: 3000,
-    //         easing: 'swing',
-    //         step: function (now) {
-    //             $(this).text(Math.ceil(now));
-    //         }
-    //     });
-    // });
-
-    // jQuery 코드
-    $(window).on('scroll', function () {
-        var section = $('.sub04'); // sub04 섹션 선택
-
-        if (isElementInViewport(section)) {
-            // 스크롤이 sub04 섹션에 도달했을 때 카운트 애니메이션 실행
-            $('.num').each(function () {
-                var target = $(this);
-                if (!target.hasClass('counted')) {
-                    $({ Counter: 0 }).animate({ Counter: target.text() }, {
-                        duration: 3000,
-                        easing: 'swing',
-                        step: function () {
-                            target.text(Math.ceil(this.Counter));
-                        }
-                    });
-                    target.addClass('counted');
-                }
-            });
-        }
+    // counter
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
     });
 
-    function isElementInViewport(element) {
-        var rect = element[0].getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    $('.num').each(function () {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 3000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+
+
+    $('.left_itm .menu>li').on('click', function () {
+        var idx = $(this).index();
+        console.log(idx);
+        $('.right_itm .content').removeClass('on');
+        $('.right_itm .content').eq(idx).addClass('on');
+
+        $('.left_itm .menu>li').removeClass('on');
+        $(this).addClass('on');
+    })
+
+
+    // 초기에는 처음 3개의 리스트 항목만 보이도록 설정
+    $("#list-container a:gt(3)").hide();
+
+    // 더보기 버튼 클릭 시 추가 3개의 리스트 항목 보이기
+    $("#load-more-btn").click(function () {
+        $("#list-container a:hidden").slice(0, 4).show();
+
+        // 모든 리스트 항목이 보이면 더보기 버튼 숨기기
+        if ($("#list-container a:hidden").length === 0) {
+            $("#load-more-btn").hide();
+        }
+    });
 
 });
