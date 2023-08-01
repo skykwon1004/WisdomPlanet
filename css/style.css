@@ -255,95 +255,49 @@
 
 /*main*/
 .main {
-    position: relative;
-}
-
-.main_slide {
-    position: relative;
-}
-
-.main_slide figure {
-    position: relative;
+    width: 100%;
     height: 100vh;
-    color: #fff;
+    position: relative;
 }
 
-.main_slide figure::before {
-    position: absolute;
+.video_wrap::after {
+    background: rgba(35, 35, 35, 0.85);
     content: "";
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgb(18, 18, 18, 0.2);
     height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
-.main_slide .itm01 {
-    background: url(../images/mainvisual01.jpg)no-repeat center/cover;
-}
-
-.main_slide .itm02 {
-    background: url(../images/mainvisual02.jpg)no-repeat center/cover;
+video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .inner_text {
+    /* outline: 1px solid red; */
     position: absolute;
-    inset: 50% auto auto 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.strong_h {
-    overflow: hidden;
+    z-index: 999;
 }
 
 .inner_text strong {
     display: block;
     width: 600px;
     margin: 0 auto 80px auto;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 1.5s;
-}
-
-.main_slide .itm.on strong {
-    transform: translateY(0);
-    opacity: 1;
+    z-index: 999;
 }
 
 .inner_text span {
     display: block;
     font-size: 30px;
     font-weight: 100;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 1.5s;
     text-align: center;
-}
-
-.main_slide .itm.on span {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.slide_handler {
-    width: 1280px;
-    position: absolute;
-    inset: 50% auto auto 50%;
-    transform: translate(-50%, -50%);
-}
-
-.main_slide_arrows {
-    color: #fff;
-    opacity: 0.2;
-    font-size: 46px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.main_slide_arrows button {
-    border: none;
-    background: transparent;
-    cursor: pointer;
 }
 
 .scroll {
@@ -392,7 +346,7 @@
 /* sub01 About Us */
 .contet_itm {
     display: flex;
-    gap: 50px;
+    gap: 60px;
     justify-content: space-between;
     align-items: center;
 }
@@ -408,9 +362,9 @@
 
 .contet_itm ul li {
     display: flex;
-    gap: 60px;
+    gap: 50px;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 45px 0 45px 10px;
     border-bottom: 1px solid #444;
 }
 
@@ -801,7 +755,9 @@
 .footer {
     margin: 50px 0 0 0;
     /* border-top: 1px solid #444; */
-    background: rgb(43, 43, 43)
+    background: rgb(43, 43, 43);
+    color: #999;
+
 }
 
 .footer .inner {
@@ -810,6 +766,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 40px auto;
 }
 
 
