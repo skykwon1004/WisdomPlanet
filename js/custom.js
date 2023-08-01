@@ -4,8 +4,10 @@ $(function () {
         anchors: ['main', 'sub01', 'sub02', 'sub03', 'sub04', 'sub05'],
         navigation: false,
         css3: false,
+
         //반응형에서 fullpage 안하기.
         responsiveWidth: 700,
+
         //넘치는 부분 스크롤 하기.
         scrollOverflow: true,
         afterRender: function () {
@@ -41,28 +43,9 @@ $(function () {
                 startCounter();
             }
         },
-
     });
 
 
-    function startCounter() {
-        $('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
-
-        $('.num').each(function () {
-            $(this).prop('Counter', 0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 3000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        });
-    }
 
 
     // main_visual
@@ -89,6 +72,8 @@ $(function () {
         $('.main_slide').slick('slickNext')
     });
 
+
+
     // m cover
     $('.mopen').on('click', function () {
         $(this).toggleClass('on');
@@ -103,6 +88,9 @@ $(function () {
 
     });
 
+
+
+
     // brands_slide
     $('.brands_slide').on('init afterChange', function (e, s, c) {
         // c = 0,1
@@ -111,7 +99,6 @@ $(function () {
         // $('.main_visual .main_slide_num span').text(c ? (c + 1) : 1);
         // $('.main_visual .main_slide_num strong').text(s.slideCount);
     });
-
 
     $('.brands_slide').slick({
         arrows: false,
@@ -126,7 +113,6 @@ $(function () {
         ]
     });
 
-
     $('.sub02 .left').on('click', function () {
         $('.brands_slide').slick('slickPrev')
     });
@@ -134,6 +120,7 @@ $(function () {
     $('.sub02 .right').on('click', function () {
         $('.brands_slide').slick('slickNext')
     });
+
 
 
     // 4번째 섹션에 도달했을 때 카운터를 시작하는 함수
@@ -190,12 +177,11 @@ $(function () {
 
 
 
-
-
+    // news 더보기
     $(window).on('load', function () {
         load('#js-load', '4');
         $("#js-btn-wrap .more_button").on("click", function () {
-            load('#js-load', '4', '#js-btn-wrap');
+            load('#js-load', '8', '#js-btn-wrap');
         })
     });
 
