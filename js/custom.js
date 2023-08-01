@@ -158,15 +158,6 @@ $(function () {
 
 
 
-
-
-
-
-
-
-
-
-
     //tab 기능 구현
     $('.left_itm .menu>li').on('click', function () {
         var idx = $(this).index();
@@ -180,21 +171,45 @@ $(function () {
 
 
 
-    //news 더보기
-    // 초기에는 처음 3개의 리스트 항목만 보이도록 설정
-    $("#list-container a:gt(3)").hide();
+    // //news 더보기
+    // // 초기에는 처음 3개의 리스트 항목만 보이도록 설정
+    // $("#list-container a:gt(3)").hide();
 
-    // 더보기 버튼 클릭 시 추가 3개의 리스트 항목 보이기
-    $("#load-more-btn").click(function () {
-        $("#list-container a:hidden").slice(0, 4).show();
+    // // 더보기 버튼 클릭 시 추가 3개의 리스트 항목 보이기
+    // $("#load-more-btn").click(function () {
+    //     $("#list-container a:hidden").slice(0, 4).show();
 
-        //높이를 100vh 씩 늘립니다.
-        $(".sub05 .inner").css("height", "+=400px");
+    //     //높이를 100vh 씩 늘립니다.
+    //     $(".sub05 .inner").css("height", "+=400px");
 
-        // 모든 리스트 항목이 보이면 더보기 버튼 숨기기
-        if ($("#list-container a:hidden").length === 0) {
-            $("#load-more-btn").hide();
-        }
+    //     // 모든 리스트 항목이 보이면 더보기 버튼 숨기기
+    //     if ($("#list-container a:hidden").length === 0) {
+    //         $("#load-more-btn").hide();
+    //     }
+    // });
+
+
+
+
+
+    $(window).on('load', function () {
+        load('#js-load', '4');
+        $("#js-btn-wrap .more_button").on("click", function () {
+            load('#js-load', '4', '#js-btn-wrap');
+        })
     });
+
+    function load(id, cnt, btn) {
+        var girls_list = id + " .js-load:not(.active)";
+        var girls_length = $(girls_list).length;
+        var girls_total_cnt;
+        if (cnt < girls_length) {
+            girls_total_cnt = cnt;
+        } else {
+            girls_total_cnt = girls_length;
+            $('.more_button').hide()
+        }
+        $(girls_list + ":lt(" + girls_total_cnt + ")").addClass("active");
+    }
 
 });
