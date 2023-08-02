@@ -109,7 +109,7 @@ html {
 }
 
 .header h1 a img {
-    width: 60px;
+    width: 180px;
 }
 
 .side_gnb {
@@ -292,7 +292,7 @@ video {
 
 .inner_text strong {
     display: block;
-    width: 800px;
+    width: 700px;
     margin: 0 auto 80px auto;
     z-index: 999;
 }
@@ -456,21 +456,30 @@ video {
     justify-content: space-between
 }
 
+.barans_desc span {
+    font-size: 20px;
+    line-height: 1.4;
+    max-width: 200px;
+    min-height: 80px;
+    /* outline: 1px solid red; */
+    display: block;
+    font-size: 20px;
+    font-weight: 100;
+}
+
 .barans_desc i {
-    vertical-align: middle;
+    font-size: 18px;
+    /* outline: 1px solid red; */
+    height: 20px;
+    margin: 60px 0 0 0;
+    opacity: 0.5;
 }
 
 .brands_slide_text strong {
     display: block;
-    margin: 0 0 20px 0;
-    font-size: 22px;
+    margin: 0 0 30px 0;
+    font-size: 24px;
     font-weight: 500;
-}
-
-.brands_slide_text span {
-    display: block;
-    font-size: 18px;
-    font-weight: 100;
 }
 
 .brands_slide_handler {
