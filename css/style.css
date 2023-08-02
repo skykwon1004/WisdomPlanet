@@ -161,7 +161,7 @@ html {
 .mopen {
     /* outline: 1px solid yellow; */
     position: fixed;
-    inset: 30px 150px auto auto;
+    inset: 35px 150px auto auto;
     z-index: 9999;
 
     width: 30px;
