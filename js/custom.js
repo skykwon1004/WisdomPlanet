@@ -47,7 +47,6 @@ $(function () {
 
 
 
-
     // main_visual
     $('.main_slide').on('init afterChange', function (e, s, c) {
         // c = 0,1
@@ -87,7 +86,6 @@ $(function () {
         $('.header').removeClass('on');
 
     });
-
 
 
 
