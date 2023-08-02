@@ -497,6 +497,10 @@ video {
     cursor: pointer;
 }
 
+.sub01 .content_title p {
+    margin: 0 0 100px 0;
+}
+
 
 /* sub03 */
 .partners_content {
