@@ -101,6 +101,8 @@ $(function () {
     $('.brands_slide').slick({
         arrows: false,
         slidesToShow: 4,
+        autoplay: true,
+        autoplaySpeed: 3000,
         responsive: [
             {
                 breakpoint: 768,

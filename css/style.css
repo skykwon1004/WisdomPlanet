@@ -64,7 +64,7 @@ html {
 
     padding: 0 50px;
     background: #222;
-    line-height: 80px;
+    line-height: 100px;
 
     border-bottom: 1px solid #333;
 }
@@ -82,8 +82,8 @@ html {
 
 .header .header_wrap .gnb ul {
     display: flex;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: 900;
 }
 
 .header .header_wrap .gnb ul li {
@@ -292,16 +292,21 @@ video {
 
 .inner_text strong {
     display: block;
-    width: 600px;
+    width: 800px;
     margin: 0 auto 80px auto;
     z-index: 999;
 }
 
 .inner_text span {
     display: block;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 100;
     text-align: center;
+}
+
+.inner_text span b {
+    font-size: 36px;
+    font-weight: 700;
 }
 
 .scroll {
@@ -311,19 +316,19 @@ video {
     z-index: 99;
 }
 
-/* .scroll strong {
-    font-size: 14px;
+.scroll strong {
+    font-size: 16px;
     font-weight: 100;
     color: #fff;
     letter-spacing: 0.15em;
-} */
+}
 
 .scroll .line {
     position: absolute;
     inset: auto auto 0 50%;
-    transform: translate(-50%, 150%);
+    transform: translate(-50%, 120%);
     width: 1px;
-    height: 100px;
+    height: 120px;
     background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -416,6 +421,7 @@ video {
 }
 
 .brands_slide .brands_slide_itm {
+    overflow: hidden;
     border-radius: 30px;
     margin: 10px 20px 10px 10px;
     box-shadow: 5px 5px 10px 0px rgba(4, 4, 4, 0.1)
@@ -423,6 +429,20 @@ video {
 
 .brands_slide .brands_slide_itm img {
     border-radius: 20px 20px 0 0;
+}
+
+.brands_slide .brands_slide_itm figure {
+    overflow: hidden;
+}
+
+.brands_slide .brands_slide_itm:hover img {
+    scale: 1.3;
+    transition: 0.7s;
+    filter: grayscale(1);
+}
+
+.brands_slide .brands_slide_itm:hover {
+    box-shadow: 5px 5px 10px 0px rgba(84, 84, 84, 0.2)
 }
 
 .brands_slide_text {
@@ -479,14 +499,23 @@ video {
 
 
 /* sub03 */
-.partners_itm_wrap {
-    display: flex;
-    flex-direction: column;
-    /* animation: move01 20s linear infinite;
-    width: 200%; */
+.partners_content {
+    position: relative;
+    width: 1280px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-/* @keyframes move01 {
+.partners_itm_top {
+    animation: move01 20s linear infinite;
+    display: flex;
+    position: absolute;
+    top: 15px;
+    width: 200%;
+}
+
+@keyframes move01 {
     0% {
         left: 0;
     }
@@ -494,32 +523,16 @@ video {
     100% {
         left: -100%;
     }
-} */
-
-.partners_itm {
-    display: flex;
-    gap: 30px;
 }
 
-.partners_itm01 {
-    margin: 0 0 30px 0;
-}
-
-/* .partners_itm01 li:last-child {
-    margin: 0 30px 0 0;
-} */
-
-
-
-/* .partners_bottom {
-    position: absolute;
-    outline: 1px solid red;
-    top: 20%;
-
-    display: flex;
+.partners_itm_bottom {
     animation: move02 20s linear infinite;
+    display: flex;
+    position: absolute;
+    top: 115px;
     width: 200%;
 }
+
 @keyframes move02 {
     0% {
         left: -100%;
@@ -528,10 +541,13 @@ video {
     100% {
         left: 0;
     }
-} */
+}
 
-
-
+.partners_itm ul {
+    display: flex;
+    gap: 15px;
+    margin: 0 15px 0 0;
+}
 
 /* sub04 */
 .sub04 {
@@ -719,6 +735,7 @@ video {
 .lists,
 .main {
     display: block;
+    font-size: 16px;
 }
 
 /* toTop */
@@ -727,18 +744,19 @@ video {
     inset: auto 50px 50px auto;
     z-index: 999;
     background: linear-gradient(-60deg, #d63384, var(--mc));
+    opacity: 0.8;
     border-radius: 50%;
 }
 
 .toTop a {
     display: block;
-    width: 50px;
-    height: 50px;
-    padding: 14px;
+    width: 80px;
+    height: 80px;
+    padding: 26px;
 }
 
 .toTop i {
-    font-size: 22px;
+    font-size: 28px;
     color: #fff;
 }
 
@@ -749,6 +767,7 @@ video {
     /* border-top: 1px solid #444; */
     background: rgb(43, 43, 43);
     color: #999;
+    font-size: 18px;
 
 }
 
@@ -1047,7 +1066,7 @@ video {
         color: var(--mc);
         text-align: center;
     }
-    
+
     .content_title p {
         margin: 0 0 60px 0;
         font-size: 1.8rem;
@@ -1122,7 +1141,7 @@ video {
         font-weight: 700;
         color: var(--mc);
     }
-    
+
     .content_title_02 p {
         margin: 0 0 30px 0;
         font-size: 1.8rem;
