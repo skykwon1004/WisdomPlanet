@@ -433,6 +433,7 @@ video {
 
 .brands_slide .brands_slide_itm img {
     border-radius: 20px 20px 0 0;
+    transition: 0.7s;
 }
 
 .brands_slide .brands_slide_itm figure {
@@ -441,7 +442,6 @@ video {
 
 .brands_slide .brands_slide_itm:hover img {
     scale: 1.3;
-    transition: 0.7s;
     filter: grayscale(1);
 }
 
