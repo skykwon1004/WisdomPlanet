@@ -292,20 +292,20 @@ video {
 
 .inner_text strong {
     display: block;
-    width: 700px;
+    width: 650px;
     margin: 0 auto 80px auto;
     z-index: 999;
 }
 
 .inner_text span {
     display: block;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 100;
     text-align: center;
 }
 
 .inner_text span b {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 700;
 }
 
@@ -407,6 +407,10 @@ video {
     flex: 3;
 }
 
+.sub01 .content_title p {
+    margin: 0 0 80px 0;
+}
+
 /* sub02 Brands */
 .sub02 {
     position: relative;
@@ -505,11 +509,6 @@ video {
     background: transparent;
     cursor: pointer;
 }
-
-.sub01 .content_title p {
-    margin: 0 0 100px 0;
-}
-
 
 /* sub03 */
 .partners_content {
@@ -756,20 +755,19 @@ video {
     position: fixed;
     inset: auto 50px 50px auto;
     z-index: 999;
-    background: linear-gradient(-60deg, #d63384, var(--mc));
-    opacity: 0.8;
+    background: var(--mc);
     border-radius: 50%;
 }
 
 .toTop a {
     display: block;
-    width: 80px;
-    height: 80px;
-    padding: 26px;
+    width: 60px;
+    height: 60px;
+    padding: 18px;
 }
 
 .toTop i {
-    font-size: 28px;
+    font-size: 24px;
     color: #fff;
 }
 
