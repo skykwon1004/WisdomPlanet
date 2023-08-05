@@ -1163,12 +1163,13 @@ video {
         margin: 0 0 30px 0;
         font-size: 1.8rem;
         font-weight: 300;
+        margin: 0 0 250px 0;
     }
 
     .brands_slide_wrap {
         width: 100%;
         position: static;
-        top: 50%;
+        top: 0;
         left: 40%;
         transform: translate(0, -45%);
     }
@@ -1237,32 +1238,55 @@ video {
 
 
     /* sub03 */
-    .partners_itm_wrap {
+    .partners_content {
+        position: relative;
+        width: 1280px;
+        height: 300px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .partners_itm_top {
+        animation: move01 20s linear infinite;
         display: flex;
-        flex-direction: column;
-        /* animation: move01 20s linear infinite;
-    width: 200%; */
+        position: absolute;
+        top: 15px;
+        width: 200%;
     }
 
-    /* @keyframes move01 {
-    0% {
-        left: 0;
+    @keyframes move01 {
+        0% {
+            left: 0;
+        }
+
+        100% {
+            left: -100%;
+        }
     }
 
-    100% {
-        left: -100%;
-    }
-} */
-
-    .partners_itm {
+    .partners_itm_bottom {
+        animation: move02 20s linear infinite;
         display: flex;
-        gap: 30px;
+        position: absolute;
+        top: 115px;
+        width: 200%;
     }
 
-    .partners_itm01 {
-        margin: 0 0 30px 0;
+    @keyframes move02 {
+        0% {
+            left: -100%;
+        }
+
+        100% {
+            left: 0;
+        }
     }
 
+    .partners_itm ul {
+        display: flex;
+        gap: 15px;
+        margin: 0 15px 0 0;
+    }
 
     /* sub04 */
     .sub04 {
@@ -1283,7 +1307,7 @@ video {
     .achievements_itm_wrap {
         grid-gap: 100px;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         margin: 0 auto;
         max-width: 1280px;
         width: 100%;
@@ -1330,7 +1354,7 @@ video {
     }
 
     .news_wrap {
-        width: 1280px;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -1339,8 +1363,10 @@ video {
     }
 
     .news_wrap .left_tit .menu {
-        display: flex;
-        gap: 40px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
     .news_wrap .left_itm {
@@ -1358,6 +1384,7 @@ video {
         color: #111;
         font-size: 22px;
         font-weight: 700;
+        text-align: center;
     }
 
     .news_wrap .content {
@@ -1485,11 +1512,12 @@ video {
 
     .footer .inner {
         height: 200px;
-        padding: 100px 0;
+        padding: 100px 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto 40px auto;
+        text-align: center;
     }
 }
 
