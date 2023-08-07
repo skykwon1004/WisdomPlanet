@@ -51,6 +51,7 @@ body {
     background: #222;
     font-family: 'Pretendard', 'Montserrat', 'Roboto', 'Noto Sans KR', sans-serif;
     word-break: keep-all;
+    overflow-x: hidden;
 }
 
 .cf::after,

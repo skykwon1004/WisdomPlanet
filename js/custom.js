@@ -179,9 +179,9 @@ $(function () {
 
     // news 더보기
     $(window).on('load', function () {
-        load('#js-load', '4');
+        load('#js-load', '2');
         $("#js-btn-wrap .more_button").on("click", function () {
-            load('#js-load', '8', '#js-btn-wrap');
+            load('#js-load', '4', '#js-btn-wrap');
         })
     });
 

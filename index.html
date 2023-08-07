@@ -92,7 +92,7 @@
                     </strong>
                 </div>
                 <div class="strong_h">
-                    <span>
+                    <span class="main_slogan">
                         인플루언서와 브랜드의 <b>Harmonic Growth</b>를 추구합니다.
                     </span>
                 </div>
@@ -630,6 +630,17 @@
     <div class="toTop">
         <a href="#main"><i class="xi-arrow-up"></i></a>
     </div>
+
+    <script>
+        if (window.matchMedia("screen and (max-width: 479px)").matches) {
+            const Main_slogan = document.querySelector('.main_slogan');
+            Main_slogan.innerHTML = `
+            <span class="main_slogan">
+                        인플루언서와 브랜드의<br/>
+                        <b>Harmonic Growth</b>를 추구합니다.
+            </span>
+    `}
+    </script>
 </body>
 
 </html>
