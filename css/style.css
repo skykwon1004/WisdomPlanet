@@ -541,7 +541,7 @@ video {
     animation: move02 20s linear infinite;
     display: flex;
     position: absolute;
-    top: 115px;
+    top: 90px;
     width: 200%;
 }
 
@@ -739,6 +739,31 @@ video {
     display: block;
 }
 
+#list-container.on {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/* 아래의 모든 코드는 영역::코드로 사용 */
+#list-container.on::-webkit-scrollbar {
+    width: 12px;
+    /* 스크롤바의 너비 */
+}
+
+#list-container.on::-webkit-scrollbar-thumb {
+    height: 30%;
+    /* 스크롤바의 길이 */
+    background: rgb(18, 18, 18, 0.7);
+    /* 스크롤바의 색상 */
+
+    /* border-radius: 10px; */
+}
+
+#list-container.on::-webkit-scrollbar-track {
+    background: rgba(179, 181, 183, 0.1);
+    /*스크롤바 뒷 배경 색상*/
+}
+
 .is_comp.js-load:after {
     display: none;
 }
@@ -839,7 +864,7 @@ video {
     }
 
     .header h1 a img {
-        width: 60px;
+        width: 120px;
     }
 
     .side_gnb {
@@ -891,7 +916,7 @@ video {
     .mopen {
         /* outline: 1px solid yellow; */
         position: fixed;
-        inset: 30px 150px auto auto;
+        inset: 25px 30px auto auto;
         z-index: 9999;
 
         width: 30px;

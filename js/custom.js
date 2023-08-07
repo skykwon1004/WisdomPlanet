@@ -198,4 +198,8 @@ $(function () {
         $(girls_list + ":lt(" + girls_total_cnt + ")").addClass("active");
     }
 
+    $(".more_button").click(function () {
+        // Add the "active" class to the element with class "all"
+        $("#list-container").addClass("on");
+    });
 });
