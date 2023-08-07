@@ -1330,28 +1330,29 @@ video {
     }
 
     .achievements_itm_wrap {
-        grid-gap: 100px;
+        grid-gap: 50px;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         margin: 0 auto;
         max-width: 1280px;
         width: 100%;
 
         background: rgb(175, 175, 175, 0.1);
         border-radius: 30px;
-        padding: 100px;
+        padding: 40px 25px;
     }
 
     .achievements_itm {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 10px;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
     .achievements_itm .achievements_itm_title {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 300;
         opacity: 0.5;
         order: 2;
@@ -1368,14 +1369,14 @@ video {
     }
 
     .num {
-        font-size: 60px;
+        font-size: 40px;
         font-weight: bold;
     }
 
 
     /* sub05 */
     .sub05 .inner {
-        padding: 150px 0 0 0;
+        padding: 80px 0 0 0;
     }
 
     .news_wrap {
