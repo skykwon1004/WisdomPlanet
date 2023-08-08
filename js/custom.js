@@ -6,7 +6,7 @@ $(function () {
         css3: false,
 
         //반응형에서 fullpage 안하기.
-        responsiveWidth: 700,
+        responsiveWidth: 1138,
 
         //넘치는 부분 스크롤 하기.
         scrollOverflow: true,
