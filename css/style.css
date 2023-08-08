@@ -510,6 +510,28 @@ video {
     cursor: pointer;
 }
 
+.brands_slide_wrap .slide_dots {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+}
+
+.brands_slide_wrap .slide_dots button {
+    padding: 8px;
+    background: rgb(114, 114, 114, 0.6);
+    border-radius: 50%;
+    border: none;
+}
+
+.brands_slide_wrap .slide_dots button.on {
+    background: var(--mc);
+    transform: scale(1.2);
+}
+
+
 /* sub03 */
 .partners_content {
     position: relative;

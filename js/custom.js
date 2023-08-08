@@ -94,8 +94,18 @@ $(function () {
         // c = 0,1
         var current = $('.brands_slide .slick-current');
         current.addClass('on').siblings().removeClass('on');
-        // $('.main_visual .main_slide_num span').text(c ? (c + 1) : 1);
-        // $('.main_visual .main_slide_num strong').text(s.slideCount);
+        $('.brands_slide_wrap .slide_dots button').removeClass('on');
+        $('.brands_slide_wrap .slide_dots button').eq(c ? c : 0).addClass('on');
+    });
+
+    $('.brands_slide_wrap .slide_dots button').on('click', function () {
+        var idx = $(this).parent().index();
+        $('.brands_slide').slick('slickGoTo', idx);
+    });
+
+    $('.main_product .slide_dots button').on('click', function () {
+        $('.main_product .slide_dots button').removeClass('on');
+        $(this).addClass('on');
     });
 
     $('.brands_slide').slick({
