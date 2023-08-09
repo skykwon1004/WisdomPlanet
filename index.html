@@ -116,7 +116,7 @@
                     <p>No.1 인플루언서 마케팅 플랫폼 WisdomPlanet 입니다.</p>
                 </div>
                 <div class="contet_itm">
-                    <figure>
+                    <figure class="about_us_img">
                         <img src="./images/about.jpg" alt="">
                     </figure>
                     <ul>
@@ -147,7 +147,7 @@
             <div class="inner">
                 <div class="content_title_02">
                     <h2>Brands</h2>
-                    <p>WisdomPlanet의<br />
+                    <p class="brand_title_desc">WisdomPlanet의<br />
                         브랜드들을 소개합니다
                     </p>
                 </div>
@@ -645,7 +645,7 @@
     </div>
 
     <script>
-        if (window.matchMedia("screen and (max-width: 479px)").matches) {
+        if (window.matchMedia("screen and (max-width: 767px)").matches) {
             const Main_slogan = document.querySelector('.main_slogan');
             Main_slogan.innerHTML = `
             <span class="main_slogan">
@@ -664,9 +664,28 @@
                 <li><button></button></li>
             </ul>
     `
+        }
 
+        if (window.matchMedia("screen and (min-width: 768px) and (max-width: 1138px)").matches) {
+            const About_us_img = document.querySelector('.about_us_img');
+            About_us_img.innerHTML = `
+            <figure class="about_us_img">
+                <img src="./images/about_t.jpg" alt="">
+            </figure>
+            `
 
-
+            const Brand_title_desc = document.querySelector('.brand_title_desc');
+            Brand_title_desc.innerHTML = `
+            <p class="brand_title_desc">WisdomPlanet의 브랜드들을 소개합니다</p>
+            `
+            const Brand_slid_dots = document.querySelector('.slide_dots');
+            Brand_slid_dots.innerHTML = `
+            <ul class="slide_dots">
+                <li><button class="on"></button></li>
+                <li><button></button></li>
+                <li><button></button></li>
+            </ul>
+            `
         }
     </script>
 </body>
