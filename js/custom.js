@@ -1,5 +1,4 @@
 $(function () {
-
     $('.Main__content').fullpage({
         anchors: ['main', 'sub01', 'sub02', 'sub03', 'sub04', 'sub05'],
         navigation: false,
@@ -85,6 +84,14 @@ $(function () {
         $('.mopen').removeClass('on');
         $('.header').removeClass('on');
 
+    });
+
+    // 모바일 메뉴열었을때 뒤에 스크롤 안되게하는
+    $('.header').on('scroll wheel touchmove', function (e) {
+        if ($('.header').hasClass('on')) {
+            // header에 on이 붙었을때만 이벤트 정지하라
+            e.preventDefault();
+        };
     });
 
 

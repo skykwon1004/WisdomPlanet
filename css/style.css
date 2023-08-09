@@ -51,7 +51,7 @@ html {
 .section {
     width: 100%;
     height: 100vh;
-    background: url(../images/main_bg.jpg)no-repeat center center/cover;
+    /* background: url(../images/main_bg.jpg)no-repeat center center/cover; */
 }
 
 /* header */
@@ -511,6 +511,7 @@ video {
 }
 
 .brands_slide_wrap .slide_dots {
+    visibility: hidden;
     position: absolute;
     bottom: -50px;
     left: 50%;
@@ -851,6 +852,12 @@ video {
 /* 모바일 */
 @media screen and (min-width: 360px) and (max-width: 767px) {
 
+
+    .section {
+        width: 100%;
+        height: auto;
+    }
+
     /* header */
     .header {
         position: fixed;
@@ -884,6 +891,8 @@ video {
     .header.on {
         background: rgba(31, 31, 31, 0.8);
     }
+
+
 
     .header h1 a img {
         width: 120px;
@@ -1201,6 +1210,7 @@ video {
 
     /* sub02 Brands */
     .sub02 {
+        height: 100%;
         position: relative;
     }
 
@@ -1276,6 +1286,7 @@ video {
     }
 
     .brands_slide_arrows {
+        visibility: hidden;
         color: #fff;
         opacity: 0.5;
         font-size: 32px;
@@ -1287,6 +1298,28 @@ video {
         border: none;
         background: transparent;
         cursor: pointer;
+    }
+
+    .brands_slide_wrap .slide_dots {
+        visibility: visible;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        gap: 10px;
+    }
+
+    .brands_slide_wrap .slide_dots button {
+        padding: 8px;
+        background: rgb(114, 114, 114, 0.6);
+        border-radius: 50%;
+        border: none;
+    }
+
+    .brands_slide_wrap .slide_dots button.on {
+        background: var(--mc);
+        transform: scale(1.2);
     }
 
 
@@ -1597,7 +1630,9 @@ video {
 
 
 /* 테블릿 */
-@media screen and (min-width: 768px) and (max-width: 1138px) { /* header */
+@media screen and (min-width: 768px) and (max-width: 1138px) {
+
+    /* header */
     .header {
         position: fixed;
         top: 0;
